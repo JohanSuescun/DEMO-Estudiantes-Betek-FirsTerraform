@@ -12,7 +12,7 @@ resource "aws_s3_bucket" "web" {
    tags = {
     Name        = "My bucket"
     Environment = "Dev"
-    Propiedad = "johan"
+  
   }
 }
 
