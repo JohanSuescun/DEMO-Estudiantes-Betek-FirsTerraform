@@ -5,13 +5,25 @@ provider "aws" {
 }
 
 
+terraform {
+
+
+   backend "s3" {
+   bucket         = "index-johansuescun" # Debes crearlo manualmente una vez
+   key            = "github-actions-demo/terraform.tfstate" # Ruta dentro del bucket
+   region         = "us-east-1"
+   encrypt        = true
+ }
+ }
+
+
 
 resource "aws_s3_bucket" "web" {
  bucket = "johansuescun-githubaccions-demo-cohorte3" #nombre del bucket que crearas
 
    tags = {
     Name        = "My bucket"
-    Environment = "Dev"
+   
   
   }
 }
